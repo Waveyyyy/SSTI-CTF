@@ -1,0 +1,15 @@
+[Unit]
+Description=Flask website vulnerable to SSTI
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/opt/SSTI-CTF
+Environment="FLASK_APP=app.py"
+Environment="FLASK_RUN_HOST=0.0.0.0"
+Environment="FLASK_RUN_PORT=80"
+ExecStart=/usr/bin/local/flask run
+Restart=Always
+
+[Install]
+WantedBy=multi-user.target
