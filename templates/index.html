@@ -52,7 +52,6 @@
             <span>
               Streamline Solutions Technology, Inc.
             </span>
-            {{ data }}
           </a>
 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -79,7 +78,8 @@
               <li class="nav-item">
                 <a class="nav-link" href="#"> <i class="fa fa-user" aria-hidden="true"></i> Login</a>
               </li>
-              <form class="form-inline">
+              <form class="form-inline" method="GET">
+                <input type="text" name="q" id="q" placeholder="{% if data %} {{ data }} {% else %} search {% endif %}">
                 <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
